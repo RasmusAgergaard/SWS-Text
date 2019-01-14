@@ -1,0 +1,10 @@
+C:\Google drev\Main drive\Programming\Projects\TextEditor\TextEditor\bin\Debug\TextEditor.exe.config
+C:\Google drev\Main drive\Programming\Projects\TextEditor\TextEditor\bin\Debug\TextEditor.exe
+C:\Google drev\Main drive\Programming\Projects\TextEditor\TextEditor\bin\Debug\TextEditor.pdb
+C:\Google drev\Main drive\Programming\Projects\TextEditor\TextEditor\obj\Debug\TextEditor.csprojAssemblyReference.cache
+C:\Google drev\Main drive\Programming\Projects\TextEditor\TextEditor\obj\Debug\TextEditor.Form1.resources
+C:\Google drev\Main drive\Programming\Projects\TextEditor\TextEditor\obj\Debug\TextEditor.Properties.Resources.resources
+C:\Google drev\Main drive\Programming\Projects\TextEditor\TextEditor\obj\Debug\TextEditor.csproj.GenerateResource.cache
+C:\Google drev\Main drive\Programming\Projects\TextEditor\TextEditor\obj\Debug\TextEditor.csproj.CoreCompileInputs.cache
+C:\Google drev\Main drive\Programming\Projects\TextEditor\TextEditor\obj\Debug\TextEditor.exe
+C:\Google drev\Main drive\Programming\Projects\TextEditor\TextEditor\obj\Debug\TextEditor.pdb
