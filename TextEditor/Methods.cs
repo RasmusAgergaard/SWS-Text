@@ -240,6 +240,12 @@ namespace TextEditor
             }
         }
 
+        private void ReplaceAll(string search, string replace)
+        {
+            var replacedText = textBox1.Text.Replace(search, replace);
+            textBox1.Text = replacedText;
+        }
+
         private void DoYouWantToSaveChanges()
         {
             DialogResult dialogResult = MessageBox.Show("Do you want to save your changes?", "TextEditor", MessageBoxButtons.YesNoCancel);

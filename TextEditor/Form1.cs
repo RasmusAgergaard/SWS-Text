@@ -116,7 +116,7 @@ namespace TextEditor
 
         private void replaceToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            ReplaceDialog();
         }
 
         private void goToToolStripMenuItem_Click(object sender, EventArgs e)

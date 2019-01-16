@@ -8,3 +8,13 @@ C:\Google drev\Main drive\Programming\Projects\TextEditor\TextEditor\obj\Debug\T
 C:\Google drev\Main drive\Programming\Projects\TextEditor\TextEditor\obj\Debug\TextEditor.csproj.CoreCompileInputs.cache
 C:\Google drev\Main drive\Programming\Projects\TextEditor\TextEditor\obj\Debug\TextEditor.exe
 C:\Google drev\Main drive\Programming\Projects\TextEditor\TextEditor\obj\Debug\TextEditor.pdb
+C:\Google drev\Main drive\Programming\Projects\SWS-Text\TextEditor\bin\Debug\SWS-Text.exe.config
+C:\Google drev\Main drive\Programming\Projects\SWS-Text\TextEditor\bin\Debug\SWS-Text.exe
+C:\Google drev\Main drive\Programming\Projects\SWS-Text\TextEditor\bin\Debug\SWS-Text.pdb
+C:\Google drev\Main drive\Programming\Projects\SWS-Text\TextEditor\obj\Debug\TextEditor.csprojAssemblyReference.cache
+C:\Google drev\Main drive\Programming\Projects\SWS-Text\TextEditor\obj\Debug\TextEditor.Form1.resources
+C:\Google drev\Main drive\Programming\Projects\SWS-Text\TextEditor\obj\Debug\TextEditor.Properties.Resources.resources
+C:\Google drev\Main drive\Programming\Projects\SWS-Text\TextEditor\obj\Debug\TextEditor.csproj.GenerateResource.cache
+C:\Google drev\Main drive\Programming\Projects\SWS-Text\TextEditor\obj\Debug\TextEditor.csproj.CoreCompileInputs.cache
+C:\Google drev\Main drive\Programming\Projects\SWS-Text\TextEditor\obj\Debug\SWS-Text.exe
+C:\Google drev\Main drive\Programming\Projects\SWS-Text\TextEditor\obj\Debug\SWS-Text.pdb

@@ -52,5 +52,53 @@ namespace TextEditor
             //Close the dialog
             cancelButton.Click += (object sender, EventArgs e) => searchDialog.Close();
         }
+
+        //Replace
+        private void ReplaceDialog()
+        {
+            var margin = 10;
+            var replaceDialog = new Form { Width = 350, Height = 180, Text = "Replace" };
+            var searchTextLabel = new Label() { Left = margin, Top = margin + 2, Height = 18, Text = "Search for:", Width = 60 };
+            var replaceTextLabel = new Label() { Left = margin, Top = margin + 30, Height = 18, Text = "Replace with:", Width = 60 };
+            var searchInputBox = new TextBox() { Left = 70, Top = margin, Width = 160 };
+            var replaceInputBox = new TextBox() { Left = 70, Top = margin + 30, Width = 160 };
+            var findNextButton = new Button() { Text = "Find Next", Left = 240, Width = 80, Top = margin - 2 };
+            var replaceNextButton = new Button() { Text = "Replace", Left = 240, Width = 80, Top = margin - 2 + 30 };
+            var replaceAllButton = new Button() { Text = "Replace All", Left = 240, Width = 80, Top = margin - 2 + 60 };
+            var cancelButton = new Button() { Text = "Cancel", Left = 240, Width = 80, Top = margin + 90 };
+
+            //Init
+
+            //Add controls
+            replaceDialog.Controls.Add(findNextButton);
+            replaceDialog.Controls.Add(replaceNextButton);
+            replaceDialog.Controls.Add(replaceAllButton);
+            replaceDialog.Controls.Add(cancelButton);
+
+            replaceDialog.Controls.Add(searchTextLabel);
+            replaceDialog.Controls.Add(replaceTextLabel);
+            replaceDialog.Controls.Add(searchInputBox);
+            replaceDialog.Controls.Add(replaceInputBox);
+
+            replaceDialog.Show();
+            searchInputBox.Focus();
+
+            //Find next
+            findNextButton.Click += (object sender, EventArgs e) =>
+            {
+                SearchNext(searchInputBox.Text, "right");
+            };
+
+            //Replace
+
+            //Replace All
+            replaceAllButton.Click += (object sender, EventArgs e) =>
+            {
+                ReplaceAll(searchInputBox.Text, replaceInputBox.Text);
+            };
+
+            //Close the dialog
+            cancelButton.Click += (object sender, EventArgs e) => replaceDialog.Close();
+        }
     }
 }
