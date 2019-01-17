@@ -116,7 +116,7 @@ namespace TextEditor
 
         private void goToToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            JumpDialog();
         }
 
         private void selectAllToolStripMenuItem_Click(object sender, EventArgs e)

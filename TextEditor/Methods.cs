@@ -269,6 +269,14 @@ namespace TextEditor
             textBox1.Text = replacedText;
         }
 
+        private void JumpToLine(int lineNumber)
+        {
+            int skipChars = textBox1.GetFirstCharIndexFromLine(lineNumber);
+            textBox1.Select(skipChars, 0);
+            textBox1.Focus();
+            textBox1.ScrollToCaret();
+        }
+
         private void DoYouWantToSaveChanges()
         {
             DialogResult dialogResult = MessageBox.Show("Do you want to save your changes?", "TextEditor", MessageBoxButtons.YesNoCancel);

@@ -33,7 +33,7 @@ namespace TextEditor
             searchDialog.Controls.Add(groupRadioButton);
             groupRadioButton.Controls.Add(rightRadioButton);
             groupRadioButton.Controls.Add(leftRadioButton);
-            searchDialog.Show();
+            searchDialog.Show(this);
             inputBox.Focus();
 
             //Send the input to the Search method
@@ -80,7 +80,7 @@ namespace TextEditor
             replaceDialog.Controls.Add(searchInputBox);
             replaceDialog.Controls.Add(replaceInputBox);
 
-            replaceDialog.Show();
+            replaceDialog.Show(this);
             searchInputBox.Focus();
 
             //Find next
@@ -103,6 +103,45 @@ namespace TextEditor
 
             //Close the dialog
             cancelButton.Click += (object sender, EventArgs e) => replaceDialog.Close();
+        }
+
+        //Jump to line
+        private void JumpDialog()
+        {
+            var margin = 10;
+            var jumpDialog = new Form { Width = 350, Height = 150, Text = "Search" };
+            var textLabel = new Label() { Left = margin, Top = margin + 2, Height = 18, Text = "Jump to line:", Width = 80 };
+            var inputBox = new TextBox() { Left = 90, Top = margin, Width = 140 };
+            var jumpButton = new Button() { Text = "Jump", Left = 240, Width = 80, Top = margin - 2 };
+            var cancelButton = new Button() { Text = "Cancel", Left = 240, Width = 80, Top = margin + 30 };
+
+            //Init
+
+            //Add controls
+            jumpDialog.Controls.Add(jumpButton);
+            jumpDialog.Controls.Add(cancelButton);
+            jumpDialog.Controls.Add(textLabel);
+            jumpDialog.Controls.Add(inputBox);
+            jumpDialog.Show(this);
+            inputBox.Focus();
+
+            //Jump to line
+            jumpButton.Click += (object sender, EventArgs e) =>
+            {
+                int inputNumber = 0;
+
+                if (Int32.TryParse(inputBox.Text, out inputNumber))
+                {
+                    JumpToLine(inputNumber);
+                }
+                else
+	            {
+                    MessageBox.Show("Please enter a number", programName);
+                }
+            };
+
+            //Close
+            cancelButton.Click += (object sender, EventArgs e) => jumpDialog.Close();
         }
     }
 }
