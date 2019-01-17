@@ -90,6 +90,10 @@ namespace TextEditor
             };
 
             //Replace
+            replaceNextButton.Click += (object sender, EventArgs e) =>
+            {
+                ReplaceNext(searchInputBox.Text, replaceInputBox.Text);
+            };
 
             //Replace All
             replaceAllButton.Click += (object sender, EventArgs e) =>

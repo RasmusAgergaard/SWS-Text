@@ -109,11 +109,6 @@ namespace TextEditor
             SearchDialog();
         }
 
-        private void findNextToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void replaceToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ReplaceDialog();

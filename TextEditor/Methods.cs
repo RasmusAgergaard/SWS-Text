@@ -240,6 +240,29 @@ namespace TextEditor
             }
         }
 
+        private void ReplaceNext(string search, string replace)
+        {
+            //If the right text is selected, replace it
+            if (textBox1.SelectionLength == search.Length && search == textBox1.SelectedText)
+            {
+                textBox1.SelectedText = replace;
+            }
+
+            //Find the next string part
+            int positionOfResult = textBox1.Text.IndexOf(search, textBox1.SelectionStart + textBox1.SelectionLength);
+
+            if (positionOfResult != -1)
+            {
+                textBox1.SelectionStart = positionOfResult;
+                textBox1.SelectionLength = search.Length;
+                textBox1.HideSelection = false;
+            }
+            else
+            {
+                MessageBox.Show("'" + search + "'" + " was not found", programName);
+            }
+        }
+
         private void ReplaceAll(string search, string replace)
         {
             var replacedText = textBox1.Text.Replace(search, replace);
