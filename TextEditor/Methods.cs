@@ -5,6 +5,7 @@ using System.Drawing.Printing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -291,6 +292,75 @@ namespace TextEditor
             {
                 MessageBox.Show("Line number is larger that the number of lines in the file", programName);
             }
+        }
+
+        private void SyntaxHighlight()
+        {
+            // getting keywords/functions
+            string keywords = @"\b(public|private|partial|static|namespace|class|using|void|foreach|in)\b";
+            MatchCollection keywordMatches = Regex.Matches(textBox1.Text, keywords);
+
+            // getting types/classes from the text 
+            string types = @"\b(Console)\b";
+            MatchCollection typeMatches = Regex.Matches(textBox1.Text, types);
+
+            // getting comments (inline or multiline)
+            string comments = @"(\/\/.+?$|\/\*.+?\*\/)";
+            MatchCollection commentMatches = Regex.Matches(textBox1.Text, comments, RegexOptions.Multiline);
+
+            // getting strings
+            string strings = "\".+?\"";
+            MatchCollection stringMatches = Regex.Matches(textBox1.Text, strings);
+
+            // saving the original caret position + forecolor
+            int originalIndex = textBox1.SelectionStart;
+            int originalLength = textBox1.SelectionLength;
+            Color originalColor = Color.Black;
+
+            // MANDATORY - focuses a label before highlighting (avoids blinking)
+            //titleLabel.Focus();
+
+            // removes any previous highlighting (so modified words won't remain highlighted)
+            textBox1.SelectionStart = 0;
+            textBox1.SelectionLength = textBox1.Text.Length;
+            textBox1.ForeColor = originalColor;
+
+            // scanning...
+            foreach (Match m in keywordMatches)
+            {
+                textBox1.SelectionStart = m.Index;
+                textBox1.SelectionLength = m.Length;
+                textBox1.ForeColor = Color.Blue;
+            }
+
+            foreach (Match m in typeMatches)
+            {
+                textBox1.SelectionStart = m.Index;
+                textBox1.SelectionLength = m.Length;
+                textBox1.ForeColor = Color.DarkCyan;
+            }
+
+            foreach (Match m in commentMatches)
+            {
+                textBox1.SelectionStart = m.Index;
+                textBox1.SelectionLength = m.Length;
+                textBox1.ForeColor = Color.Green;
+            }
+
+            foreach (Match m in stringMatches)
+            {
+                textBox1.SelectionStart = m.Index;
+                textBox1.SelectionLength = m.Length;
+                textBox1.ForeColor = Color.Brown;
+            }
+
+            // restoring the original colors, for further writing
+            textBox1.SelectionStart = originalIndex;
+            textBox1.SelectionLength = originalLength;
+            //textBox1.ForeColor = originalColor;
+
+            // giving back the focus
+            textBox1.Focus();
         }
 
         private void DoYouWantToSaveChanges()

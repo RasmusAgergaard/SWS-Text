@@ -159,12 +159,6 @@ namespace TextEditor
 
         }
 
-        //Syntax Highlight
-        private void htmlToolStripMenuItem_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
         //Settings
         private void changeFontToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -188,8 +182,19 @@ namespace TextEditor
         //Text changed
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+            //Unsaved
             docIsSaved = false;
             this.Text = programName + " *";
+
+            //Syntax Highlight
+            if (htmlToolStripMenuItem.Checked)
+            {
+                SyntaxHighlight();
+            }
+            else
+            {
+                textBox1.ForeColor = Color.Black;
+            }
         }
 
         //Form is closing - The form is going to close no matter what

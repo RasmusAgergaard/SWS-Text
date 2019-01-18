@@ -370,7 +370,6 @@
             this.htmlToolStripMenuItem.Name = "htmlToolStripMenuItem";
             this.htmlToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.htmlToolStripMenuItem.Text = "HTML";
-            this.htmlToolStripMenuItem.CheckedChanged += new System.EventHandler(this.htmlToolStripMenuItem_CheckedChanged);
             // 
             // settingsToolStripMenuItem
             // 
