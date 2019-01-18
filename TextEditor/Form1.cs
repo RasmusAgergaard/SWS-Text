@@ -206,5 +206,7 @@ namespace TextEditor
                 FormClosingDoYouWantToSaveChanges();
             }
         }
+
+
     }
 }

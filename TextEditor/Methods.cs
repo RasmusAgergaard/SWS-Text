@@ -323,41 +323,41 @@ namespace TextEditor
             // removes any previous highlighting (so modified words won't remain highlighted)
             textBox1.SelectionStart = 0;
             textBox1.SelectionLength = textBox1.Text.Length;
-            textBox1.ForeColor = originalColor;
+            textBox1.SelectionColor = originalColor;
 
             // scanning...
             foreach (Match m in keywordMatches)
             {
                 textBox1.SelectionStart = m.Index;
                 textBox1.SelectionLength = m.Length;
-                textBox1.ForeColor = Color.Blue;
+                textBox1.SelectionColor = Color.Blue;
             }
 
             foreach (Match m in typeMatches)
             {
                 textBox1.SelectionStart = m.Index;
                 textBox1.SelectionLength = m.Length;
-                textBox1.ForeColor = Color.DarkCyan;
+                textBox1.SelectionColor = Color.DarkCyan;
             }
 
             foreach (Match m in commentMatches)
             {
                 textBox1.SelectionStart = m.Index;
                 textBox1.SelectionLength = m.Length;
-                textBox1.ForeColor = Color.Green;
+                textBox1.SelectionColor = Color.Green;
             }
 
             foreach (Match m in stringMatches)
             {
                 textBox1.SelectionStart = m.Index;
                 textBox1.SelectionLength = m.Length;
-                textBox1.ForeColor = Color.Brown;
+                textBox1.SelectionColor = Color.Brown;
             }
 
             // restoring the original colors, for further writing
             textBox1.SelectionStart = originalIndex;
             textBox1.SelectionLength = originalLength;
-            //textBox1.ForeColor = originalColor;
+            textBox1.SelectionColor = originalColor;
 
             // giving back the focus
             textBox1.Focus();
