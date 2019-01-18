@@ -132,7 +132,7 @@ namespace TextEditor
 
                 if (Int32.TryParse(inputBox.Text, out inputNumber))
                 {
-                    JumpToLine(inputNumber);
+                    JumpToLine(inputNumber, jumpDialog);
                 }
                 else
 	            {

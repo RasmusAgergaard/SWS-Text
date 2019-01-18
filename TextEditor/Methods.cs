@@ -269,12 +269,28 @@ namespace TextEditor
             textBox1.Text = replacedText;
         }
 
-        private void JumpToLine(int lineNumber)
+        private void JumpToLine(int lineNumber, Form dialogToClose)
         {
-            int skipChars = textBox1.GetFirstCharIndexFromLine(lineNumber);
-            textBox1.Select(skipChars, 0);
-            textBox1.Focus();
-            textBox1.ScrollToCaret();
+            //Count number of lines
+            var lines = textBox1.Lines.Count();
+            lines -= String.IsNullOrWhiteSpace(textBox1.Lines.Last()) ? 1 : 0;
+
+            //If the entered number is within the possible
+            if (lineNumber <= lines && lineNumber != 0)
+            {
+                //Move the cursor
+                int skipChars = textBox1.GetFirstCharIndexFromLine(lineNumber - 1);
+                textBox1.Select(skipChars, 0);
+                textBox1.Focus();
+                textBox1.ScrollToCaret();
+
+                //Close the dialog
+                dialogToClose.Close();
+            }
+            else
+            {
+                MessageBox.Show("Line number is larger that the number of lines in the file", programName);
+            }
         }
 
         private void DoYouWantToSaveChanges()
